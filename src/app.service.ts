@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ExamType } from './type';
+import { ExamType, ExamType2, ExamType3 } from './type';
 
 let dummy: ExamType = [
   {
@@ -12,10 +12,34 @@ let dummy: ExamType = [
   },
 ];
 
+const dummy2: ExamType2 = [
+  {
+    lang: 'react',
+    country: 'ko',
+  },
+  {
+    lang: 'nextJs',
+    country: 'us',
+  },
+];
+
+const dummy3: ExamType3 = {
+  name: 'jihoon',
+  email: 'jihoon@naver.com',
+};
+
 @Injectable()
 export class AppService {
   getHello(): ExamType {
     return dummy;
+  }
+
+  getJob(): ExamType2 {
+    return dummy2;
+  }
+
+  getUser(id: string) {
+    return dummy3;
   }
 
   putEmail(name: string): string {
